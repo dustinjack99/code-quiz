@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(55, 60, 65);
+    margin: 0 auto;
+    width: 90%;
+}
+
+.box {
+    background-color: rgb(238, 169, 169);
+    border: red 5px solid;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    width: 60%;
+}
+
+button {
+    background-color: rgb(130, 130, 238);
+    border: red 2px solid;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    border: red 5px solid;
+    color: red;
+    text-align: center;
+}
+
+input {
+    margin-left: 100px;
+}
+
+label {
+    font-size: 20px;
+
+    padding: 15px;
+}
+
+#submit {
+    margin-top: 25px;
+
+}
+
+.questions {
+    background-color: rgb(238, 169, 169);
+    border: red 5px solid;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    width: 550px;
+}
+

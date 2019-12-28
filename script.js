@@ -130,8 +130,10 @@ const questions = [
 
             let lastUser = JSON.parse(localStorage.getItem("user"));
                 console.log("lastUser", lastUser);
-                playerPost.textContent = lastUser.firstName + lastUser.lastName + score;
+                playerPost.textContent = lastUser.firstName + lastUser.lastName + lastUser.score;
         }
+
+        postScore();
 
     });
     
@@ -140,10 +142,9 @@ const questions = [
 
     function postScore() {
       // Clear todoList element and update todoCountSpan
-      let player = [""];
-      player.innerHTML = "";
-      scoreBoard.textContent = player.length;
-      // Render a new li for each todo
+      // player.innerHTML = "";
+      // scoreBoard.textContent = player.length;
+      // Render a new li for each player
       for (let i = 0; i < player.length; i++) {
         let post = player[i];
         let li = document.createElement("li");
@@ -154,4 +155,4 @@ const questions = [
     
     
     
-    postScore();
+    

@@ -13,14 +13,25 @@
         <div class="timer"></div>
     </header>
     <h1>Results</h1>
-        <main class="box">
-            <h2>High Scores</h2>
-            <h3>Top Ensigns</h3>
-                <ol id="scoreboard">
-                    <li id="player"></li>
+        <main>
+            <form class="box">
+                <label for="firstName">Your First Name</label>
+                <input id="firstName" type="text">
+                <label for="lastName">Your Last Name</label>
+                <input id="lastName" type="text">
+                <input id="submit" type="submit">
 
-                </ol>
-        </main>
+            </form>
+            <div class="box">
+                <h2>High Scores</h2>
+                <h3>Top Ensigns</h3>
+                    <ol id="scoreboard">
+                        <li id="player"></li>
+
+                    </ol>
+            </div>
+            <div id="alertDiv"></div>
+            </main>
         <script src="./script.js"></script>
 </body>
 </html>

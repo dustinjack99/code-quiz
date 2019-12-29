@@ -1,6 +1,13 @@
 
 // let timerEl = document.querySelector(".timer");
 // let mainEl = document.querySelector(".questions");
+let scoreBoard = document.querySelector("#scoreboard");
+let player = document.querySelector("#player");
+let lastName = document.querySelector("#lastName");
+let firstName = document.querySelector("#firstName");
+let submit = document.querySelector("#submit");
+let alertDiv = document.querySelector("#alertDiv");
+let playerPost = document.querySelector("#player");
 let score = 0;
 // let timer = 60;
 
@@ -55,17 +62,17 @@ const questions = [
     ///etc.
   ];
 
-  title = document.getElementById("title");
-  a1 = document.getElementById("a1text");
-  a2 = document.getElementById("a2text");
-  a3 = document.getElementById("a3text");
-  a4 = document.getElementById("a4text");
+let title = document.getElementById("title");
+let a1 = document.getElementById("a1text");
+let a2 = document.getElementById("a2text");
+let a3 = document.getElementById("a3text");
+let a4 = document.getElementById("a4text");
 
   
-  document.addEventListener('click', display);
-  i = 0;
-  function display () {
-
+  // document.addEventListener('click', display);
+  
+  // function display () {
+  //   for(i = 0; i < questions.length; i++) {
         // if (i = 0) {
         // title.replaceWith(questions[0].title);
         // a1.replaceWith(questions[0].choices[0]);
@@ -96,63 +103,36 @@ const questions = [
       //   a4.replaceWith(questions[3].choices[3]);
       //   
       // }
+    //   }
+    // };
 
-    };
-
-    let lastName = document.querySelector("#lastName");
-    let firstName = document.querySelector("#firstName");
-    let submit = document.querySelector("#submit");
-    let alertDiv = document.querySelector("#alertDiv");
-    let playerPost = document.querySelector("#player");
-
-    function errorMessage (type, message) {
-        alertDiv.textContent = message;
-        alertDiv.setAttribute("class", type);
-    }
     submit.addEventListener("click", function (e) {
         e.preventDefault();
-
+        let highScores = [""];
         let user = {
           first: firstName.value.trim(),
           last: lastName.value.trim(),
           score: score
         };
-        
-        if (user.lastName === "") {
-          errorMessage("error", "You must submit a name for your score.");  
-        } else if (user.firstName === "") {
-          errorMessage("error", "You must submit a name for your score.");
-        } else {
-          errorMessage("Score posted", "Thank you for playing!");
-        
-            console.log(user);
-            localStorage.setItem("user", JSON.stringify(user));
 
-            let lastUser = JSON.parse(localStorage.getItem("user"));
-                console.log("lastUser", lastUser);
-                playerPost.textContent = lastUser.firstName + lastUser.lastName + lastUser.score;
+        localStorage.setItem("user", user);
+        console.log(user);
+
+        function postScore() {
+          let userScore = user.first + " " + user.last + ": " + score;
+          for (let q = 0; q < highScores.length; q++) {
+            let post = userScore;
+            let li = document.createElement("li");
+            li.textContent = post;
+            scoreBoard.appendChild(li);
+          }
         }
-
+        
         postScore();
 
     });
     
-    let scoreBoard = document.querySelector("#scoreboard");
-    let player = document.querySelector("#player");
 
-    function postScore() {
-      // Clear todoList element and update todoCountSpan
-      // player.innerHTML = "";
-      // scoreBoard.textContent = player.length;
-      // Render a new li for each player
-      for (let i = 0; i < player.length; i++) {
-        let post = player[i];
-        let li = document.createElement("li");
-        li.textContent = post;
-        scoreBoard.appendChild(li);
-      }
-    }
-    
     
     
     

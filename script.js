@@ -6,6 +6,7 @@ let name = document.querySelector("#name");
 let submit = document.querySelector("#submit");
 let alertDiv = document.querySelector("#alertDiv");
 let playerPost = document.querySelector("#player");
+let ensigns = [];
 let score = 0;
 let timer = 60;
 let interval = setInterval(function () {
@@ -17,21 +18,6 @@ let interval = setInterval(function () {
       
   } 
 }, 1000);
-
-let ensigns = [];
-
-submit.addEventListener("click", function(e) {
-  e.preventDefault();
-  ensigns[i] = name.value.trim();
-  localStorage.setItem("name", JSON.stringify(ensigns));
-  for (i = 0; i < ensigns.length; i++) {
-    
-  }
-  li = document.createElement("li");
-  scoreBoard.appendChild(li);
-  li.innerHTML = JSON.parse(localStorage.getItem("name", ensigns.i)) + " Score: " + score; 
-  console.log(ensigns)
-})
   
 function loseSplash() {
   timerEl.textContent = " ";
@@ -44,19 +30,19 @@ function loseSplash() {
 
 const questions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "How many seasons did Star Trek: The Next Generation run?",
+      choices: ["Three", "Four", "Five", "Six"],
+      answer: "Six"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "Who was the creator of Star Trek: The Next Generation?",
+      choices: ["George Lucas", "Gene Roddenberry", "Leonard Nimoy", "Steven Spielberg"],
+      answer: "Gene Roddenberry"
     },
     {
-      title: "Which crew of the Enterprise is a Klingon?",
-      choices: ["Riker", "Picard", "Warf", "Troi"],
-      answer: "Warf"
+      title: "Which crew-member of the Enterprise is a Klingon?",
+      choices: ["Willam Riker", "Jean-Luc Picard", "Lieutenant Warf", "Dianna Troi"],
+      answer: "Lieutenant Warf"
     },
     {
       title: "In what episode did the crew of the Enterprise lose their first comrade?",
@@ -91,18 +77,9 @@ function nextQuestion(e) {
     a3.innerHTML = questions[i].choices[2];
     a4.innerHTML = questions[i].choices[3];    
   } else {
+    e.preventDefault();
     window.location.href = "results.html";
     score = score + 10 + timer;
     localStorage.setItem("score", score);
   }
-  console.log(i); 
 }
-
-
-
-
-
-
-    
-    
-    

@@ -2,9 +2,7 @@
 let timerEl = document.querySelector(".timer");
 let mainEl = document.querySelector(".questions");
 let scoreBoard = document.querySelector("#scoreboard");
-let player = document.querySelector("#player");
-let lastName = document.querySelector("#lastName");
-let firstName = document.querySelector("#firstName");
+let name = document.querySelector("#name");
 let submit = document.querySelector("#submit");
 let alertDiv = document.querySelector("#alertDiv");
 let playerPost = document.querySelector("#player");
@@ -20,6 +18,21 @@ let interval = setInterval(function () {
   } 
 }, 1000);
 
+let ensigns = [];
+
+submit.addEventListener("click", function(e) {
+  e.preventDefault();
+  ensigns[i] = name.value.trim();
+  localStorage.setItem("name", JSON.stringify(ensigns));
+  for (i = 0; i < ensigns.length; i++) {
+    
+  }
+  li = document.createElement("li");
+  scoreBoard.appendChild(li);
+  li.innerHTML = JSON.parse(localStorage.getItem("name", ensigns.i)) + " Score: " + score; 
+  console.log(ensigns)
+})
+  
 function loseSplash() {
   timerEl.textContent = " ";
 
@@ -70,6 +83,7 @@ document.querySelector(".answers").addEventListener("click", nextQuestion);
 function nextQuestion(e) {
   e.preventDefault()
   if (i < questions.length - 1) {
+    score = score + 10; 
     i++;
     title.innerHTML = questions[i].title;
     a1.innerHTML = questions[i].choices[0];
@@ -77,11 +91,14 @@ function nextQuestion(e) {
     a3.innerHTML = questions[i].choices[2];
     a4.innerHTML = questions[i].choices[3];    
   } else {
-    clearInterval(interval);
-    // window.location.href = "results.html"; 
+    window.location.href = "results.html";
+    score = score + 10 + timer;
+    localStorage.setItem("score", score);
   }
   console.log(i); 
 }
+
+
 
 
 

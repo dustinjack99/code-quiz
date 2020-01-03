@@ -8,6 +8,7 @@
     <title>Star Trek Quiz</title>
 </head>
 <body>
+    <audio></audio>
     <main class="content">
         <h1>Star Trek Quiz</h1>
             <div class="box">
@@ -18,5 +19,16 @@
         
     </main>
     <script src="./script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let audioElement = document.querySelector('audio');
+            audioElement.setAttribute('src', './assets/audio/engage.mp3');
+    
+            $('#engage').hover(function() {
+                audioElement.play();
+            });
+        }); 
+    </script>
 </body>
 </html>

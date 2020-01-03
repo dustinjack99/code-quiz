@@ -1,3 +1,7 @@
+a:hover {
+    background-color: red;
+}
+
 body {
     background-color: rgb(55, 60, 65);
     margin: 0 auto;

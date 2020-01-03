@@ -8,6 +8,7 @@
     <title>Star Trek Quiz</title>
 </head>
 <body>
+    <audio></audio>
     <header>
         <div class="timer"></div>
     </header>
@@ -35,5 +36,16 @@
         </form>
     </main>
     <script src="./script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let audioElement = document.querySelector('audio');
+            audioElement.setAttribute('src', './assets/audio/warp.mp3');
+    
+            $('button').click(function() {
+                audioElement.play();
+            });
+        }); 
+    </script>
 </body>
 </html>

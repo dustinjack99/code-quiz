@@ -9,10 +9,11 @@ let playerPost = document.querySelector("#player");
 let ensigns = [];
 let score = 0;
 let timer = 60;
+
 let interval = setInterval(function () {
   timer--;
   timerEl.textContent = timer + " seconds until Borg invasion.";
-  if(timer === 0) {
+  if(timer <= 0) {
     clearInterval(interval);
     loseSplash();
       
@@ -21,11 +22,13 @@ let interval = setInterval(function () {
   
 function loseSplash() {
   timerEl.textContent = " ";
-
+  let audioElement = document.querySelector('audio');
+  audioElement.setAttribute('src', './assets/audio/borg.mp3');
   let imgEl = document.createElement("img");
-
   imgEl.setAttribute("src", "assets/images/borg.gif");
   mainEl.replaceWith(imgEl);
+  audioElement.play();
+
 };
 
 const questions = [
@@ -67,8 +70,9 @@ a4.innerHTML = questions[i].choices[3];
 
 document.querySelector(".answers").addEventListener("click", nextQuestion);
 function nextQuestion(e) {
+  console.log(e.target.innerText, i, score, timer)
   e.preventDefault()
-  if (i < questions.length - 1) {
+  if (i < questions.length - 1 && e.target.innerText == questions[i].answer) {
     score = score + 10; 
     i++;
     title.innerHTML = questions[i].title;
@@ -76,10 +80,14 @@ function nextQuestion(e) {
     a2.innerHTML = questions[i].choices[1];
     a3.innerHTML = questions[i].choices[2];
     a4.innerHTML = questions[i].choices[3];    
+  } else if (e.target.innerText != questions[i].answer) {
+    timer = timer - 10;
+
   } else {
     e.preventDefault();
     window.location.href = "results.html";
     score = score + 10 + timer;
     localStorage.setItem("score", score);
   }
+
 }

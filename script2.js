@@ -7,8 +7,10 @@ let alertDiv = document.querySelector("#alertDiv");
 let playerPost = document.querySelector("#player");
 let ensigns = [];
 let score = localStorage.getItem("score");
+let highScore = JSON.parse(localStorage.getItem("name"));
 let timer = 60;
 let i = 0;
+//^^^ get this out of the scope. this is the
 
 submit.addEventListener("click", function(e) {
     e.preventDefault();
@@ -19,6 +21,9 @@ submit.addEventListener("click", function(e) {
     }
     li = document.createElement("li");
     scoreBoard.appendChild(li);
-    li.innerHTML = JSON.parse(localStorage.getItem("name", ensigns.i)) + " Score: " + score; 
-    console.log(ensigns)
+    let all = JSON.parse(localStorage.getItem("name"));
+    li.innerHTML =  all[ensigns.length - 1] + " Score: " + score; 
+    console.log(all)
   });
+  
+

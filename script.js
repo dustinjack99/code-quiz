@@ -6,28 +6,29 @@ let name = document.querySelector("#name");
 let submit = document.querySelector("#submit");
 let alertDiv = document.querySelector("#alertDiv");
 let playerPost = document.querySelector("#player");
-let theme = new Audio('./assets/audio/credits.mp3')
 let ensigns = [];
 let score = 0;
 let timer = 60;
 
-// let interval = setInterval(function () {
-//   timer--;
-//   timerEl.textContent = timer + " seconds until Borg invasion.";
-//   if(timer <== 0) {
-//     clearInterval(interval);
-//     loseSplash();
+let interval = setInterval(function () {
+  timer--;
+  timerEl.textContent = timer + " seconds until Borg invasion.";
+  if(timer <= 0) {
+    clearInterval(interval);
+    loseSplash();
       
-//   } 
-// }, 1000);
+  } 
+}, 1000);
   
 function loseSplash() {
   timerEl.textContent = " ";
-
+  let audioElement = document.querySelector('audio');
+  audioElement.setAttribute('src', './assets/audio/borg.mp3');
   let imgEl = document.createElement("img");
-
   imgEl.setAttribute("src", "assets/images/borg.gif");
   mainEl.replaceWith(imgEl);
+  audioElement.play();
+
 };
 
 const questions = [
@@ -81,7 +82,7 @@ function nextQuestion(e) {
     a4.innerHTML = questions[i].choices[3];    
   } else if (e.target.innerText != questions[i].answer) {
     timer = timer - 10;
-    
+
   } else {
     e.preventDefault();
     window.location.href = "results.html";

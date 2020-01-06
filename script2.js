@@ -19,7 +19,7 @@ submit.addEventListener("click", function(e) {
       
   
       
-    // $(submit).replaceWith("<button><a href='index.html'>Launch New Mission?</a></button>")
+    $(submit).replaceWith("<button><a href='index.html'>Launch New Mission?</a></button>")
     console.log(user)
     
   });

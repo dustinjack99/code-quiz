@@ -6,30 +6,29 @@ let submit = document.querySelector("#submit");
 let alertDiv = document.querySelector("#alertDiv");
 let playerPost = document.querySelector("#player");
 let score = localStorage.getItem("score");
+let list = JSON.parse(localStorage.getItem('allEnsigns'));
 let timer = 60;
 
-submit.addEventListener("click", function(e) {
-    e.preventDefault();
+submit.addEventListener("click", function() {
     let name = nameBut.value;
-    let user = name + "'s score: " + score;
+    let ensigns = JSON.parse(localStorage.getItem("allEnsigns"));
+    if(ensigns == null) ensigns = [];
+    let user = {
+        name: name,
+        score: score
+      };
     let li = document.createElement("li");
-    li.textContent = user;
-    scoreBoard.appendChild(li);
-    
-      
-  
-      
+    localStorage.setItem("ensign", JSON.stringify(user));
+    ensigns.push(user);
+    localStorage.setItem("allEnsigns", JSON.stringify(ensigns));
     $(submit).replaceWith("<button><a href='index.html'>Launch New Mission?</a></button>")
-    console.log(user)
+    scoreBoard.appendChild(li);
+    li.textContent = "Ensign " + user.name + "'s score:   " + user.score;
     
   });
 
-     
-    
-
-  
-
-
-
-
-
+for (i =0; i < list.length; i++) {
+  let li = document.createElement("li");
+  scoreBoard.appendChild(li);
+  li.textContent = "Ensign " + list[i].name + "'s score:   " + list[i].score;
+}

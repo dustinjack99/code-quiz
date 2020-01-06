@@ -31,30 +31,6 @@ function loseSplash() {
 
 };
 
-const questions = [
-    {
-      title: "How many seasons did Star Trek: The Next Generation run?",
-      choices: ["Three", "Four", "Five", "Six"],
-      answer: "Six"
-    },
-    {
-      title: "Who was the creator of Star Trek: The Next Generation?",
-      choices: ["George Lucas", "Gene Roddenberry", "Leonard Nimoy", "Steven Spielberg"],
-      answer: "Gene Roddenberry"
-    },
-    {
-      title: "Which crew-member of the Enterprise is a Klingon?",
-      choices: ["Willam Riker", "Jean-Luc Picard", "Lieutenant Warf", "Dianna Troi"],
-      answer: "Lieutenant Warf"
-    },
-    {
-      title: "In what episode did the crew of the Enterprise lose their first comrade?",
-      choices: ["The Color of Evil", "A Spock Out of Time", "Something Wicked", "Fall"],
-      answer: "The Color of Evil"
-    },
-    ///etc.
-  ];
-
 let title = document.getElementById("title");
 let a1 = document.getElementById("a1text");
 let a2 = document.getElementById("a2text");
@@ -82,7 +58,7 @@ function nextQuestion(e) {
     a4.innerHTML = questions[i].choices[3];    
   } else if (e.target.innerText != questions[i].answer) {
     timer = timer - 10;
-
+//
   } else {
     e.preventDefault();
     window.location.href = "results.html";

@@ -21,7 +21,7 @@ submit.addEventListener("click", function() {
     localStorage.setItem("ensign", JSON.stringify(user));
     ensigns.push(user);
     localStorage.setItem("allEnsigns", JSON.stringify(ensigns));
-    $(submit).replaceWith("<button><a href='index.html'>Launch New Mission?</a></button>")
+    $(submit).replaceWith("<a href='index.html'>Launch New Mission?</a>")
     scoreBoard.appendChild(li);
     li.textContent = "Ensign " + user.name + "'s score:   " + user.score;
     

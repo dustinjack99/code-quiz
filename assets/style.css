@@ -1,33 +1,68 @@
-a:hover {
+a {
+    border: rgb(226,109,56) 3px solid;
+    border-radius: 10px;
     background-color: red;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    padding: 5px 10px;
+
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+    text-shadow: 1px 1px 2px lawngreen;
 }
 
 body {
-    background-color: rgb(55, 60, 65);
-    margin: 0 auto;
+    background-image: url("../assets/images/stars.gif");
+    margin: auto;
     width: 90%;
+    height: 500px;
 }
 
 .box {
-    background-color: rgb(238, 169, 169);
-    border: red 5px solid;
+    background-color: rgb(195,208,209);
+    border: rgb(226,109,56) 5px solid;
     border-radius: 10px;
-    display: inline-block;
+    display:block;
     text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
     width: 60%;
 }
 
 button {
-    background-color: rgb(130, 130, 238);
-    border: red 2px solid;
-    border-radius: 10px;
+    border: rgb(226,109,56) 2px solid;
+    border-radius: 5px;
     margin-bottom: 25px;
 }
 
+button:hover {
+    background-color: black;
+    text-shadow: 1px 1px 2px lawngreen;
+    color: white;
+}
+
+#content {
+    align-content: center;
+}
+
 h1 {
-    border: red 5px solid;
-    color: red;
+    background-color: rgb(195,208,209);
+    border: rgb(226,109,56) 5px solid;
+    border-radius: 10px;
+    color: black;
     text-align: center;
+}
+
+img {
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
 }
 
 input {
@@ -40,18 +75,42 @@ label {
     padding: 15px;
 }
 
+#name {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#splash {
+    background-color: black;
+    border: rgb(226,109,56) 5px solid;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px lawngreen;
+
+}
+
 #submit {
-    margin-top: 25px;
+    border: rgb(226,109,56) 3px solid;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 25px;
+    padding: 5px 10px;
+
+
 
 }
 
 .questions {
-    background-color: rgb(238, 169, 169);
-    border: red 5px solid;
+    background-color: rgb(195,208,209);
+    border: rgb(226,109,56) 5px solid;
     border-radius: 10px;
     margin: 0 auto;
+    margin-top: 50px;
     padding: 20px;
-    text-align: left;
+    text-align: center;
     width: 550px;
 }
 

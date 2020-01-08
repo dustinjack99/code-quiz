@@ -1,11 +1,12 @@
-
 let timerEl = document.querySelector(".timer");
-let mainEl = document.querySelector(".questions");
+let answers = document.querySelector(".answers");
 let scoreBoard = document.querySelector("#scoreboard");
 let name = document.querySelector("#name");
 let submit = document.querySelector("#submit");
 let alertDiv = document.querySelector("#alertDiv");
 let playerPost = document.querySelector("#player");
+let h1 = document.getElementsByTagName('h1');
+let img = document.getElementById('img');
 let ensigns = [];
 let score = 0;
 let timer = 60;
@@ -21,13 +22,11 @@ let interval = setInterval(function () {
 }, 1000);
   
 function loseSplash() {
-  timerEl.textContent = " ";
   let audioElement = document.querySelector('audio');
   audioElement.setAttribute('src', './assets/audio/borg.mp3');
-  let imgEl = document.createElement("img");
-  imgEl.setAttribute("src", "assets/images/borg.gif");
-  mainEl.replaceWith(imgEl);
   audioElement.play();
+  $(answers).replaceWith('<img src="assets/images/borg.gif" style="margin:auto;"><br><a id="engage" href="index.html">Launch Next Mission?</a>');
+  $(h1).replaceWith("<h1>The Borg Have Come... Do Not Resist. <br> One of Us... One of Us...</h1>")
 
 };
 

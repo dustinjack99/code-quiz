@@ -22,22 +22,23 @@ body {
     margin: auto;
     width: 90%;
     height: 500px;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .box {
     background-color: rgb(195,208,209);
     border: rgb(226,109,56) 5px solid;
     border-radius: 10px;
-    display:block;
     text-align: center;
     margin: 0 auto;
     margin-top: 25px;
-    width: 60%;
+    width: 80%;
 }
 
 button {
     border: rgb(226,109,56) 2px solid;
     border-radius: 5px;
+    font-size: 20px;
     margin-bottom: 25px;
 }
 
@@ -51,12 +52,25 @@ button:hover {
     align-content: center;
 }
 
+h1, h2, #label {
+    font-family: 'Racing Sans One', cursive;
+}
+
 h1 {
     background-color: rgb(195,208,209);
     border: rgb(226,109,56) 5px solid;
     border-radius: 10px;
     color: black;
     text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    border-bottom: rgb(226,109,56) 5px solid;
+}
+
+h3 {
+    text-decoration: underline;
 }
 
 img {
@@ -69,15 +83,19 @@ input {
     margin-left: 100px;
 }
 
-label {
-    font-size: 20px;
+#label {
+    display: block;
+    font-size: 30px;
+    margin-top: 25px;
+}
 
-    padding: 15px;
+li {
+    margin-bottom: 5px;
 }
 
 #name {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: auto;
+    margin-bottom: 25px;
 }
 
 #splash {
@@ -85,8 +103,9 @@ label {
     border: rgb(226,109,56) 5px solid;
     border-radius: 10px;
     color: white;
+    margin: 25px 25px;
+    padding: 15px;
     text-shadow: 1px 1px 2px lawngreen;
-
 }
 
 #submit {
@@ -97,10 +116,14 @@ label {
     font-size: 20px;
     margin: auto;
     margin-bottom: 25px;
+    margin-top: 10px;
     padding: 5px 10px;
+}
 
-
-
+.timer {
+    color: white;
+    text-shadow: 1px 1px 2px lawngreen;
+    margin-top: 10px;
 }
 
 .questions {
@@ -109,7 +132,6 @@ label {
     border-radius: 10px;
     margin: 0 auto;
     margin-top: 50px;
-    padding: 20px;
     text-align: center;
     width: 550px;
 }
